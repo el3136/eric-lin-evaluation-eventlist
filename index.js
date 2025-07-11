@@ -81,13 +81,9 @@ async function editEvent(id, btn) {
   const row = btn.closest("tr");
   const [nameCell, startCell, endCell, actionsCell] = row.children;
 
-  const name = nameCell.textContent;
-  const start = startCell.textContent;
-  const end = endCell.textContent;
-
-  nameCell.innerHTML = `<input type="text" value="${name}" />`;
-  startCell.innerHTML = `<input type="date" value="${start}" />`;
-  endCell.innerHTML = `<input type="date" value="${end}" />`;
+  nameCell.innerHTML = `<input type="text" value="${nameCell.textContent}" />`;
+  startCell.innerHTML = `<input type="date" value="${startCell.textContent}" />`;
+  endCell.innerHTML = `<input type="date" value="${endCell.textContent}" />`;
   actionsCell.innerHTML = `
     <button onclick="saveEvent('${id}', this)">Save</button>
     <button onclick="fetchEvents()">Cancel</button>
