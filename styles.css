@@ -56,7 +56,7 @@
   vertical-align: middle;
 }
 
-tbody td:first-child {
+.event-list__tbody td:first-child {
   max-width: 200px;             /* limits width for text wrapping */
   white-space: normal;
   word-wrap: break-word;
