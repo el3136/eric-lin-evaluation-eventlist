@@ -16,7 +16,7 @@ function renderEvents(events) {
       <td>${event.startDate}</td>
       <td>${event.endDate}</td>
       <td>
-        <button onclick="editEvent('${event.id}')">Edit</button>
+        <button onclick="editEvent('${event.id}', this)">Edit</button>
         <button onclick="deleteEvent('${event.id}')">Delete</button>
       </td>
     `;
@@ -77,11 +77,8 @@ async function deleteEvent(id) {
   fetchEvents();
 }
 
-async function editEvent(id) {
-  const row = [...tableBody.children].find(row =>
-    row.innerHTML.includes(`editEvent('${id}')`)
-  );
-
+async function editEvent(id, btn) {
+  const row = btn.closest("tr");
   const [nameCell, startCell, endCell, actionsCell] = row.children;
 
   const name = nameCell.textContent;
