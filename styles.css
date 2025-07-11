@@ -57,7 +57,7 @@
 }
 
 tbody td:first-child {
-  max-width: 200px;             /* limits width to encourage text wrapping */
+  max-width: 200px;             /* limits width for text wrapping */
   white-space: normal;
   word-wrap: break-word;
   word-break: break-word;
