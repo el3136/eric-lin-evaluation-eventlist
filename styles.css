@@ -30,7 +30,7 @@
 
 .event-list__table{
   width: 100%;
-  border-collapse: separate;
+  border-collapse: separate;    /* each cell has their own borders */
   border-spacing: 0 10px;       /* space between rows */
   border: 3px solid #e6e2d3;  /* solid tan border */
   border-radius: 5px;
@@ -45,7 +45,7 @@
 }
 
 .event-list__table td {
-  padding: 14px 18px;
+  padding: 14px 18px;           /* (vertical, horizontal) padding */
   text-align: center;
   vertical-align: middle; 
 }
