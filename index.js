@@ -102,17 +102,17 @@ async function saveNewEvent(btn) {
   const row = btn.closest("tr");  // closest <tr> ancestor Node
   const inputs = row.querySelectorAll("input");
 
+  // Validate
+  if (inputs.length < 3) {
+    alert("Please fill out all fields");
+    return;
+  }
+
   const newEvent = {
     eventName: inputs[0].value,
     startDate: inputs[1].value,
     endDate: inputs[2].value,
   };
-
-  // Validate
-  if (!newEvent.eventName || !newEvent.startDate || !newEvent.endDate) {
-    alert("Please fill out all fields");
-    return;
-  }
 
   await fetch(API_URL, {
     method: "POST",
