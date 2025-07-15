@@ -5,7 +5,7 @@
 
 .event-list-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;       /* align button above table */
   align-items: center;
   background-color: white;
   min-height: 100vh;
@@ -13,7 +13,7 @@
 }
 
 .add-event-btn-container {
-  margin-bottom: 20px;
+  margin-bottom: 20px;          /* separate button from table below */
 }
 
 .add-event-btn {
