@@ -1,6 +1,31 @@
 const API_URL = "http://localhost:3000/events";
 const tableBody = document.querySelector(".event-list__tbody");
 const addEventBtn = document.querySelector(".add-event-btn");
+const sortEventBtn = document.querySelector(".sort-event-btn");
+
+sortEventBtn.addEventListener("click", () => {
+  // Sort the rows by Start Date
+  // Get the date with .textContent
+  const sortedEventsList = Array.from(tableBody.children);
+  console.log(sortedEventsList);
+  sortedEventsList.sort((row1, row2) => {
+    // console.log(row1); // "<tr> <td>...</td> ... </tr>"
+    // console.log(row1.children);
+    // console.log(row1.children[1]);
+    // console.log(row1.children[1].textContent); // YYYY-DD-MM
+    const row1startDate = new Date(row1.children[1].textContent);
+    const row2startDate = new Date(row2.children[1].textContent);
+    if (row1startDate < row2startDate) {
+      return -1;
+    } else if (row1startDate > row2startDate) {
+      return 1;
+    } else return 0;
+  })
+  tableBody.innerHTML = "";
+  console.log(sortedEventsList);
+  // list of  [tr#TnwbYvk, tr#y1Vnxq6, tr#h50Bx8T, tr#4X0Tu3p, tr#4DfzcRM, tr#es5SiN0, tr#0O8b4TT, tr#tf5WKC9, tr#mKR02hO, tr#FZyEdj_, tr#arV0hCS, tr#30a1, tr#30a8, tr#7Dv_G7K]
+  sortedEventsList.forEach((row) => tableBody.appendChild(row));
+})
 
 async function fetchEvents() {
   const events = await fetch(API_URL).then((res) => res.json());

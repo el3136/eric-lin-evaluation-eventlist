@@ -26,6 +26,16 @@
   cursor: pointer;
 }
 
+.sort-event-btn {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #008cba;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .event-list__table{
   width: 100%;
   border-collapse: separate;    /* each cell has their own borders */
